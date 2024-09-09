@@ -1,0 +1,47 @@
+
+.cabecera {
+    display: flex;
+    align-items: center; /* Alinea verticalmente en el centro */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    background-color: var(--primario);
+    padding: 0.5rem 1rem;
+    flex-direction: column; /* Asegura que los elementos estén en fila, aunque esta es la configuración por defecto */
+    height: 100px;
+
+}
+.cabecera .logo .logolink:hover{
+filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.199)); /* Sombra en la imagen */
+
+}
+.cabecera .logo .logolink {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.cabecera .logo a {
+    color: var(--resaltado);
+    text-decoration: none;
+}
+.cabecera .logo .logolink .logoimg{
+    width: auto;
+    height: 40px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center; /* Alinea verticalmente en el centro */
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    flex-direction: row;
+
+}
+.cabecera .navegacion a {
+    color: var(--primariov3);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.cabecera .navegacion a:hover {
+    color: var(--resaltado);
+}

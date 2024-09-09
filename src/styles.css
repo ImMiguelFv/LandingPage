@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --primario: #82AD84 ;
+    --primarioV2: #a3d9a5b7;
+    --primarioV3: #4d664eb7;
+    --secundario: #F6F5F1;
+    --resaltado: rgb(255, 225, 148);
+    --fondo: #FFFFFF;
+    --texto: #000000;
+}
+*::after, *::before, *{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    background-color: var(--fondo);
+}
+li{
+    list-style: none;
+}
+a{  
+    text-decoration: none;
+}

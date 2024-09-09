@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-body">
+        <div class="suscripción">
+            <h1>Suscribase</h1>
+        </div>
+        <form class="mb-1" [formGroup]="formUser">
+            <div class="mb-2">
+                <label class="form-label">Nombre</label>
+                <input type="text" formControlName="name" class="form-control" id="name" placeholder="Escriba su nombre">
+                <div class="alert" [hidden]="formUser.get('name')?.valid || formUser.get('name')?.pristine">
+                    El nombre es obligatorio.
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="name" placeholder="Escriba su email" formControlName="email">
+                <div class="alert" [hidden]="formUser.get('email')?.valid || formUser.get('email')?.pristine">
+                <span *ngIf="formUser.get('email')?.errors?.['required']" > El correo es obligatorio. </span>
+                <span *ngIf="formUser.get('email')?.errors?.['email']" > El correo es invalido. </span>
+            </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Mensaje</label>
+                <input type="text" class="form-control" id="name" placeholder="Escriba su email" formControlName="email">
+                <div class="alert" [hidden]="formUser.get('email')?.valid || formUser.get('email')?.pristine">
+                <span *ngIf="formUser.get('email')?.errors?.['required']" > El correo es obligatorio. </span>
+                <span *ngIf="formUser.get('email')?.errors?.['email']" > El correo es invalido. </span>
+            </div>
+            </div>
+            <button class="btn">Enviar</button>
+        </form>
+    </div>
+</div>

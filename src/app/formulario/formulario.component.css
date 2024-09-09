@@ -1,0 +1,65 @@
+.card{
+    background-color: var(--primarioV2);
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.card .card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.card .card-body .suscripción{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.card .card-body .suscripción h1{
+    color: var(--primario);
+    font-size: 2rem;
+}
+.card .card-body .mb-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card .card-body .mb-1 .mb-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.card .card-body .mb-2 .form-label{
+    color: var(--primario);
+    font-size: 1.2rem;
+}
+.card .card-body .mb-2 .form-control{
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.card .card-body .mb-2 .alert{
+    background-color: rgb(253, 201, 201);
+    color: var(--primario);
+    font-size: 0.8rem;
+    margin: 6px;
+}
+.card .card-body .btn{
+    background-color: var(--resaltado);
+    color: var(--primario);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: auto;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.card .card-body .btn:hover{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.158);
+}
+
