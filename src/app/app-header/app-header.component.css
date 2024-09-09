@@ -61,14 +61,17 @@
 @media (max-width: 768px) {
     .cabecera {
         height: 120px;
-    
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        background-color: var(--primarioV21);
+        margin: 0;
     }
     .cabecera .logo {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        z-index: 2;
     }
     .cabecera .navegacion {
         display: none; /* Ocultar el menú por defecto en dispositivos móviles */
@@ -85,7 +88,6 @@
 
 
         .cabecera .navegacion.active {
-        z-index: 1;
         max-height: 120px; /* Ajusta según el tamaño máximo esperado del menú */
         animation:slide-bottom 0.8s linear both;
         background-color: var(--primarioV3);
