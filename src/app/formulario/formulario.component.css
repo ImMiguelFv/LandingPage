@@ -19,7 +19,7 @@
     margin: 10px;
 }
 .card .card-body .suscripción h1{
-    color: var(--primario);
+    color: var(--secundario);
     font-size: 2rem;
 }
 .card .card-body .mb-1 {
@@ -34,7 +34,7 @@
     margin: 10px;
 }
 .card .card-body .mb-2 .form-label{
-    color: var(--primario);
+    color: var(--secundario);
     font-size: 1.2rem;
 }
 .card .card-body .mb-2 .form-control{
@@ -45,13 +45,13 @@
 }
 .card .card-body .mb-2 .alert{
     background-color: rgb(253, 201, 201);
-    color: var(--primario);
+    color: var(--secundario);
     font-size: 0.8rem;
     margin: 6px;
 }
 .card .card-body .btn{
-    background-color: var(--resaltado);
-    color: var(--primario);
+    background-color: var(--primarioV21);
+    color: var(--secundario);
     border: none;
     border-radius: 5px;
     padding: 10px;

@@ -45,7 +45,7 @@ background-repeat: no-repeat; /* Opcional: Evita que la imagen se repita */
 }
 .btn{
     background-color: var(--resaltado);
-    color: var(--primario);
+    color: var(--primarioV2);
     border: none;
     border-radius: 5px;
     padding: 10px;

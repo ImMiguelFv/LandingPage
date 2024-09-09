@@ -3,45 +3,113 @@
     display: flex;
     align-items: center; /* Alinea verticalmente en el centro */
     justify-content: space-between; /* Distribuye el espacio entre elementos */
-    background-color: var(--primario);
+    background-color: var(--primarioV3);
     padding: 0.5rem 1rem;
     flex-direction: column; /* Asegura que los elementos estén en fila, aunque esta es la configuración por defecto */
-    height: 100px;
+    height: 140px;
 
 }
-.cabecera .logo .logolink:hover{
-filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.199)); /* Sombra en la imagen */
 
-}
 .cabecera .logo .logolink {
     font-size: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 1rem;
+    
 }
 .cabecera .logo a {
     color: var(--resaltado);
     text-decoration: none;
 }
+.cabecera .logo .logolink:hover{
+    filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.199)); /* Sombra en la imagen */
+    
+    }
 .cabecera .logo .logolink .logoimg{
     width: auto;
-    height: 40px;
+    height: 60px;
 }
 
-.navegacion {
+.cabecera  .navegacion {
     display: flex;
     align-items: center; /* Alinea verticalmente en el centro */
     justify-content: space-between; /* Distribuye el espacio entre elementos */
     flex-direction: row;
+    font-size: 1.2rem;
 
 }
 .cabecera .navegacion a {
     color: var(--primariov3);
     text-decoration: none;
-    margin: 0 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .cabecera .navegacion a:hover {
     color: var(--resaltado);
+}
+/* Estilo del botón del menú hamburguesa */
+.cabecera .logo .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primariov3);
+    cursor: pointer;
+}
+
+/* Estilo para pantallas móviles */
+@media (max-width: 768px) {
+    .cabecera {
+        height: 120px;
+    
+    }
+    .cabecera .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+    .cabecera .navegacion {
+        display: none; /* Ocultar el menú por defecto en dispositivos móviles */
+        position: absolute;
+        top: 120px;
+        left: 0;
+        right: 0;
+        background-color: var(--primarioV3);
+        flex-direction: row; /* Cambiar la dirección del menú a columna */
+        max-height: 0; /* Oculta el menú por defecto */
+        overflow: hidden; /* Asegura que el contenido oculto no sea visible */
+        animation:slide-top 0.8s linear both}
+        @keyframes slide-top{0%{transform:translateY(0)}100%{transform:translateY(-100px)}}
+
+
+        .cabecera .navegacion.active {
+        z-index: 1;
+        max-height: 120px; /* Ajusta según el tamaño máximo esperado del menú */
+        animation:slide-bottom 0.8s linear both;
+        background-color: var(--primarioV3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+        @keyframes slide-bottom
+        {0%{transform:translateY(-20px)}
+        100%{transform:translateY(0px)}}
+    
+
+        .cabecera  .navegacion li {
+        margin: 0;
+        text-align: center;
+    }
+    .cabecera  .navegacion.active {
+        display: flex; /* Mostrar el menú cuando se active */
+    }
+    .cabecera .logo .menu-toggle {
+        display: block; /* Mostrar el botón de menú hamburguesa en dispositivos móviles */
+        
+    }
+
 }
