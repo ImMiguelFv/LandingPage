@@ -44,8 +44,8 @@
     border: none;
 }
 .card .card-body .mb-2 .alert{
-    background-color: rgb(253, 201, 201);
-    color: var(--secundario);
+    background-color: var(--primarioV2);
+    color:var(--secundario);
     font-size: 0.8rem;
     margin: 6px;
 }

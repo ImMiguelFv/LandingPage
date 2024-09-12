@@ -1,41 +1,35 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms'; 
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule,FormsModule, ReactiveFormsModule],
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
-  formUser = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    address: new FormControl(''),
-    postalCode: new FormControl(''),
-    locality: new FormControl(''),
-    autonomousCommunity: new FormControl(''),
-  });
+formUser = new FormGroup({
+  name: new FormControl('', Validators.required),
+  email: new FormControl('', [Validators.required, Validators.email]),
+  address: new FormControl('', Validators.required),
+  postalcode: new FormControl('', [Validators.required]),
+  locality: new FormControl('', [Validators.required]),
+})
+name = new  FormControl('', Validators.required);
+email = new  FormControl('', [Validators.required, Validators.email]);
+address = new  FormControl('', Validators.required);
+postalcode = new  FormControl('', [Validators.required]);
+locality = new  FormControl('', [Validators.required]);
 
-  onSubmit() {
-    if (this.formUser.valid) {
-      // Obtén los datos del formulario
-      const userData = this.formUser.value;
-      
-      // Aquí puedes hacer algo con los datos, como enviarlos a tu API
-      console.log('Formulario enviado:', userData);
-      
-      // Ejemplo de cómo podrías llamar a un servicio para enviar los datos:
-      // this.usuarioService.guardarUsuario(userData).subscribe(response => {
-      //   console.log('Datos guardados:', response);
-      // }, error => {
-      //   console.error('Error al guardar datos:', error);
-      // });
-    } else {
-      console.log('Formulario no válido');
-    }
+
+onsubmit(){
+  if (this.formUser.valid) {
+    console.log("Formulario enviado");
+    alert("El proceso de envio tardará aproximadamente 1 semanas. Qué disfrute la prueba.");
+  } else {
+  console.log("Formulario no enviado")
+  }
   }
 }
