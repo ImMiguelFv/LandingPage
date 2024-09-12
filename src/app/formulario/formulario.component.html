@@ -1,26 +1,51 @@
 <div class="card" id="Suscripción">
-    <div class="card-body" id="form-zone" >
-        <div class="suscripción">
-            <h1>Reciba una muestra gratuita</h1>
+    <div class="card-body" id="form-zone">
+      <div class="suscripción">
+        <h1>Reciba una muestra gratuita</h1>
+      </div>
+      <form class="mb-1" [formGroup]="formUser" (ngSubmit)="onSubmit()">
+        <div class="mb-2">
+          <label class="form-label">Nombre</label>
+          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Escriba su nombre">
+          <div class="alert" *ngIf="formUser.get('name')?.invalid && formUser.get('name')?.touched">
+            El nombre es obligatorio.
+          </div>
         </div>
-        <form class="mb-1" [formGroup]="formUser">
-            <div class="mb-2">
-                <label class="form-label">Nombre</label>
-                <input type="text" formControlName="name" class="form-control" id="name" placeholder="Escriba su nombre">
-                <div class="alert" [hidden]="formUser.get('name')?.valid || formUser.get('name')?.pristine">
-                    El nombre es obligatorio.
-                </div>
-            </div>
-            <div class="mb-2">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" id="name" placeholder="Escriba su email" formControlName="email">
-                <div class="alert" [hidden]="formUser.get('email')?.valid || formUser.get('email')?.pristine">
-                <span *ngIf="formUser.get('email')?.errors?.['required']" > El correo es obligatorio. </span>
-                <span *ngIf="formUser.get('email')?.errors?.['email']" > El correo es invalido. </span>
-            </div>
-            </div>
-            
-            <button class="btn" id="botonform">Enviar</button>
-        </form>
+        
+        <div class="mb-2">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Escriba su email" formControlName="email">
+          <div class="alert" *ngIf="formUser.get('email')?.invalid && formUser.get('email')?.touched">
+            <span *ngIf="formUser.get('email')?.errors?.['required']">El correo es obligatorio.</span>
+            <span *ngIf="formUser.get('email')?.errors?.['email']">El correo es inválido.</span>
+          </div>
+        </div>
+  
+        <div class="mb-2">
+          <label class="form-label">Dirección</label>
+          <input type="text" formControlName="address" class="form-control" id="address" placeholder="Escriba su dirección">
+        </div>
+  
+        <div class="mb-2">
+          <label class="form-label">Código Postal</label>
+          <input type="text" formControlName="postalCode" class="form-control" id="postalCode" placeholder="Escriba su código postal">
+          <div class="alert" *ngIf="formUser.get('postalCode')?.invalid && formUser.get('postalCode')?.touched">
+            <span *ngIf="formUser.get('postalCode')?.errors?.['required']">El código postal es obligatorio si se proporciona una dirección.</span>
+          </div>
+        </div>
+  
+        <div class="mb-2">
+          <label class="form-label">Localidad</label>
+          <input type="text" formControlName="locality" class="form-control" id="locality" placeholder="Escriba su localidad">
+        </div>
+  
+        <div class="mb-2">
+          <label class="form-label">Comunidad Autónoma</label>
+          <input type="text" formControlName="autonomousCommunity" class="form-control" id="autonomousCommunity" placeholder="Escriba su comunidad autónoma">
+        </div>
+  
+        <button class="btn" id="botonform" type="submit">Enviar</button>
+      </form>
     </div>
-</div>
+  </div>
+  
