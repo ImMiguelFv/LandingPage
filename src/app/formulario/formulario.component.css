@@ -1,6 +1,6 @@
 .card{
     background-color: var(--primarioV2);
-    width: 400px;
+    width: 900px;
     margin: 10px auto;
     padding: 10px;
     border-radius: 10px;
@@ -23,9 +23,10 @@
     font-size: 2rem;
 }
 .card .card-body .mb-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px;
+    gap: 10px;
 }
 .card .card-body .mb-1 .mb-2{
     display: flex;
