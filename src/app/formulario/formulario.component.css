@@ -23,6 +23,7 @@
     font-size: 2rem;
 }
 .card .card-body .mb-1 {
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 10px;
@@ -67,6 +68,11 @@
 @media screen and (max-width: 768px) {
 .card{
     width: 300px;
+}
+.card .card-body .mb-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .card .card-body .mb-2 .form-control{
     width: 200px;
