@@ -40,6 +40,13 @@
                     La localidad es obligatoria.
                 </div>
             </div>
+            <div class="mb-2">
+                <label class="form-label">Localidad</label>
+                <input type="text" formControlName="province" class="form-control" id="province" placeholder="Escriba su provincia">
+                <div class="alert" [hidden]="formUser.get('province')?.valid || formUser.get('province')?.pristine">
+                    La provincia es obligatoria.
+                </div>
+            </div>
             <button class="btn" id="botonform" (click)="onsubmit()">Enviar</button>
         </form>
     </div>
