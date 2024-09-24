@@ -43,9 +43,8 @@ export class FormularioComponent {
         const result = await this.supabaseService.registrarSuscripcion(formData);
         console.log('Suscripción exitosa:', result);
         alert('El proceso de envío tardará aproximadamente 1 semana. ¡Qué disfrute la prueba!');
-        this.formUser.reset();  // Opcional: Resetea el formulario después de enviarlo
       } catch (error) {
-        console.error('Error al enviar la suscripción:');
+        console.error('Error al enviar la suscripción');
       }
     } else {
       console.log('Formulario no enviado. Verifica los datos.');
