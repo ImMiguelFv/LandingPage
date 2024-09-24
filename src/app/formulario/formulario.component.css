@@ -68,6 +68,7 @@
 
 @media screen and (max-width: 768px) {
 .card{
+    width: 90%;
 }
 .card .card-body .suscripción h1{
     font-size: 1.5rem;
