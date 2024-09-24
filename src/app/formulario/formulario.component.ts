@@ -13,59 +13,56 @@ import { SupabaseService } from '../../services/supabase.service'; // Importar e
 })
 export class FormularioComponent {
 
+  // Definir los controles dentro de FormGroup
   formUser = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     address: new FormControl('', Validators.required),
     postalcode: new FormControl('', [
       postalCodeValidator() // Usando el validador personalizado
-    ]),    locality: new FormControl('', Validators.required),
+    ]),    
+    locality: new FormControl('', Validators.required),
     province: new FormControl('', Validators.required),
   });
-  name = new  FormControl('', Validators.required);
-  email = new  FormControl('', [Validators.required, Validators.email]);
-  address = new  FormControl('', Validators.required);
-  postalcode = new FormControl('', [
-    postalCodeValidator() // Usando el validador personalizado
-  ]);
-  locality = new  FormControl('', [Validators.required]);
-  province = new  FormControl('', [Validators.required]);
-  // Método para manejar el envío del formulario
+
+  // Constructor con inyección de servicio Supabase
   constructor(private supabaseService: SupabaseService) {}
 
   // Método para manejar el envío del formulario
   async onSubmit() {
     if (this.formUser.valid) {
-      const formData = this.formUser.value;
+      const formData = this.formUser.value; // Acceder a los valores del formulario
 
       try {
         // Llamar al servicio de Supabase para registrar los datos
         const result = await this.supabaseService.registrarSuscripcion(formData);
-        console.log('Suscripción exitosa', );
+        console.log('Suscripción exitosa');
         alert('El proceso de envío tardará aproximadamente 1 semana. ¡Qué disfrute la prueba!');
+        this.formUser.reset(); // Esto restablece todos los campos del formulario
+
       } catch (error) {
-        console.error('Error al enviar la suscripción');
+        console.error('Error al registrar suscripción:', error);
       }
     } else {
       console.log('Formulario no enviado. Verifica los datos.');
-      
     }
   }
-  
 }
+
+// Validador personalizado para el código postal
 export function postalCodeValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value;
 
-  
+    // Si el valor es null o vacío, retorna requerido
+    if (!value) {
+      return { required: true }; 
+    }
 
     const isNumeric = /^[0-9]*$/.test(value);
     const isFiveDigits = value.length === 5;
 
     // Retorna errores específicos
-    if (!value) {
-      return { required: true }; // Si está vacío
-    }
     if (!isNumeric) {
       return { pattern: true }; // Solo debe contener números
     }
