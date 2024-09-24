@@ -27,10 +27,10 @@ export class SupabaseService {
         throw error;
       }
 
-      console.log('Suscripción registrada exitosamente:', data);
+      console.log('Suscripción registrada exitosamente', data);
       return data; // Devuelve los datos insertados
     } catch (error) {
-      console.error('Error en registrarSuscripcion:', error);
+      console.error('Error en registrarSuscripcion', error);
       throw error; // Propaga el error para manejarlo en el componente
     }
   }
