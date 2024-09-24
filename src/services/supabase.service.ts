@@ -8,7 +8,6 @@ export class SupabaseService {
   private supabase: SupabaseClient;
 
   constructor() {
-    // Reemplaza estos valores con tus credenciales de Supabase
     const SUPABASE_URL = 'https://khusecrskpxvxqotvlww.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtodXNlY3Jza3B4dnhxb3R2bHd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjcxNjYwOTksImV4cCI6MjA0Mjc0MjA5OX0.eN5E90YrhJUkrG5hjjEsp0_BwIH4rT8gBxhNdsypNQ4';
     

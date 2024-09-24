@@ -47,6 +47,7 @@ export class FormularioComponent {
       }
     } else {
       console.log('Formulario no enviado. Verifica los datos.');
+      
     }
   }
 }
