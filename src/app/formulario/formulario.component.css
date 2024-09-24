@@ -1,7 +1,6 @@
 .card{
     background-color: var(--primarioV2);
     width: 60%;
-    min-width: 650px;
     margin: 30px auto;
     padding: 10px;
     border-radius: 10px;
