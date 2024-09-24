@@ -46,7 +46,6 @@ export class FormularioComponent {
         this.formUser.reset();  // Opcional: Resetea el formulario después de enviarlo
       } catch (error) {
         console.error('Error al enviar la suscripción:', error);
-        alert('Hubo un error al registrar la suscripción.');
       }
     } else {
       console.log('Formulario no enviado. Verifica los datos.');
