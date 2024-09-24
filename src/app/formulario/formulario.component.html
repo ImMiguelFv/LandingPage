@@ -1,62 +1,80 @@
 <div class="card" id="Suscripción">
     <div class="card-body" id="form-zone">
       <div class="suscripción">
-        <h1>Reciba una muestra gratuita</h1>
+        <h1>Reciba una muestra gratuita de nuestro surtido Equilibrio</h1>
       </div>
-      
-      <!-- Vincular el formulario con formUser y manejar el submit con onSubmit() -->
       <form [formGroup]="formUser" (ngSubmit)="onSubmit()" class="mb-1">
         <div class="mb-2">
-          <label class="form-label">Nombre</label>
+          <label class="form-label">Nombre:</label>
           <input type="text" formControlName="name" class="form-control" placeholder="Escriba su nombre">
-          <div *ngIf="formUser.get('name')?.invalid && formUser.get('name')?.touched" class="alert">
+          <div *ngIf="formUser.get('name')?.invalid && formUser.get('name')?.dirty " class="alert">
             El nombre es obligatorio.
           </div>
         </div>
   
         <div class="mb-2">
-          <label class="form-label">Email</label>
+          <label class="form-label">Email:</label>
           <input type="email" formControlName="email" class="form-control" placeholder="Escriba su email">
-          <div *ngIf="formUser.get('email')?.invalid && formUser.get('email')?.touched" class="alert">
+          <div *ngIf="formUser.get('email')?.invalid && formUser.get('email')?.dirty" class="alert">
             <span *ngIf="formUser.get('email')?.errors?.['required']"> El correo es obligatorio. </span>
             <span *ngIf="formUser.get('email')?.errors?.['email']"> El correo es inválido. </span>
           </div>
         </div>
   
         <div class="mb-2">
-          <label class="form-label">Dirección</label>
+          <label class="form-label">Dirección (Calle, N°):</label>
           <input type="text" formControlName="address" class="form-control" placeholder="Escriba su dirección">
-          <div *ngIf="formUser.get('address')?.invalid && formUser.get('address')?.touched" class="alert">
+          <div *ngIf="formUser.get('address')?.invalid && formUser.get('address')?.dirty "class="alert">
             La dirección es obligatoria.
           </div>
         </div>
   
         <div class="mb-2">
-          <label class="form-label">Código Postal</label>
-          <input type="text" formControlName="postalcode" class="form-control" placeholder="Escriba su código postal">
-          <div *ngIf="formUser.get('postalcode')?.invalid && formUser.get('postalcode')?.touched" class="alert">
-            El código postal es obligatorio.
+          <label class="form-label">Código Postal:</label>
+          <input 
+              type="text" 
+              formControlName="postalcode" 
+              class="form-control" 
+              placeholder="Escriba su código postal"
+              (input)="formUser.get('postalcode')?.updateValueAndValidity()"
+          >
+          
+          <div *ngIf="(formUser.get('postalcode')?.touched || formUser.get('postalcode')?.dirty) && formUser.get('postalcode')?.errors">
+              <div *ngIf="formUser.get('postalcode')?.hasError('required')" class="alert">
+                  El código postal es obligatorio.
+              </div>
+              <div *ngIf="formUser.get('postalcode')?.hasError('pattern')" class="alert">
+                  El código postal solo debe contener números.
+              </div>
+              <div *ngIf="formUser.get('postalcode')?.hasError('length')" class="alert">
+                  El código postal debe contener exactamente 5 dígitos.
+              </div>
+              <div *ngIf="formUser.get('postalcode')?.hasError('startWithZero')" class="alert">
+                  El código postal no debe empezar con 0.
+              </div>
           </div>
-        </div>
+      </div>
+      
+      
   
         <div class="mb-2">
-          <label class="form-label">Localidad</label>
+          <label class="form-label">Localidad:</label>
           <input type="text" formControlName="locality" class="form-control" placeholder="Escriba su localidad">
-          <div *ngIf="formUser.get('locality')?.invalid && formUser.get('locality')?.touched" class="alert">
+          <div *ngIf="formUser.get('locality')?.invalid && formUser.get('locality')?.dirty" class="alert">
             La localidad es obligatoria.
           </div>
         </div>
   
         <div class="mb-2">
-          <label class="form-label">Provincia</label>
+          <label class="form-label">Provincia:</label>
           <input type="text" formControlName="province" class="form-control" placeholder="Escriba su provincia">
-          <div *ngIf="formUser.get('province')?.invalid && formUser.get('province')?.touched" class="alert">
+          <div *ngIf="formUser.get('province')?.invalid && formUser.get('province')?.dirty" class="alert">
             La provincia es obligatoria.
           </div>
         </div>
   
-        <button class="btn btn-primary" type="submit">Enviar</button>
-    </form>
+      </form>
+      <button class="btn btn-primary" type="submit">Enviar</button>
     </div>
   </div>
   

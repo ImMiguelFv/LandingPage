@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SupabaseService } from '../../services/supabase.service'; // Importar el servicio de Supabase
@@ -17,14 +17,17 @@ export class FormularioComponent {
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     address: new FormControl('', Validators.required),
-    postalcode: new FormControl('', Validators.required),
-    locality: new FormControl('', Validators.required),
+    postalcode: new FormControl('', [
+      postalCodeValidator() // Usando el validador personalizado
+    ]),    locality: new FormControl('', Validators.required),
     province: new FormControl('', Validators.required),
   });
   name = new  FormControl('', Validators.required);
   email = new  FormControl('', [Validators.required, Validators.email]);
   address = new  FormControl('', Validators.required);
-  postalcode = new  FormControl('', [Validators.required]);
+  postalcode = new FormControl('', [
+    postalCodeValidator() // Usando el validador personalizado
+  ]);
   locality = new  FormControl('', [Validators.required]);
   province = new  FormControl('', [Validators.required]);
   // Método para manejar el envío del formulario
@@ -50,4 +53,28 @@ export class FormularioComponent {
       
     }
   }
+  
+}
+export function postalCodeValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = control.value;
+
+  
+
+    const isNumeric = /^[0-9]*$/.test(value);
+    const isFiveDigits = value.length === 5;
+
+    // Retorna errores específicos
+    if (!value) {
+      return { required: true }; // Si está vacío
+    }
+    if (!isNumeric) {
+      return { pattern: true }; // Solo debe contener números
+    }
+    if (!isFiveDigits) {
+      return { length: true }; // Debe ser de exactamente 5 dígitos
+    }
+
+    return null; // Sin errores
+  };
 }

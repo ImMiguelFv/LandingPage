@@ -1,0 +1,22 @@
+.pie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--primarioV3);
+}
+.pie h3{
+    color: var(--texto);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.pie a{
+    color: var(--resaltado);
+    text-decoration: underline;
+}
+.pie img{
+    margin: 5px;
+    
+    width: 30px;
+}

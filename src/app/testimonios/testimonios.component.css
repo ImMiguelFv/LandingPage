@@ -7,7 +7,7 @@
 
 .testimonios .testimonios-container {
     display: grid;
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 30px;
     margin: 30px;
@@ -21,4 +21,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+@media screen and (max-width: 768px) {
+    .testimonios .testimonios-container {
+        grid-template-columns: repeat(1, 400px);
+        grid-template-rows: auto;
+        grid-row-gap: 30px;
+        margin: 30px;
+    }   
+    
 }

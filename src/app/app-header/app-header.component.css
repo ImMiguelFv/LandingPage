@@ -63,8 +63,7 @@
         height: 120px;
         position: fixed;
         width: 100%;
-        z-index: 1000;
-        background-color: var(--primarioV21);
+        background-color: var(--primarioV3);
         margin: 0;
     }
     .cabecera .logo {
@@ -82,14 +81,11 @@
         background-color: var(--primarioV3);
         flex-direction: row; /* Cambiar la dirección del menú a columna */
         max-height: 0; /* Oculta el menú por defecto */
-        overflow: hidden; /* Asegura que el contenido oculto no sea visible */
-        animation:slide-top 0.8s linear both}
-        @keyframes slide-top{0%{transform:translateY(0)}100%{transform:translateY(-100px)}}
-
-
+       }
+        
         .cabecera .navegacion.active {
         max-height: 120px; /* Ajusta según el tamaño máximo esperado del menú */
-        animation:slide-bottom 0.8s linear both;
+        animation:slide-bottom 0.2s linear both;
         background-color: var(--primarioV3);
         display: flex;
         flex-direction: column;
