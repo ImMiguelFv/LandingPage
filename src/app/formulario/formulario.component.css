@@ -84,4 +84,8 @@
 .card .card-body .mb-2 .form-control{
     width: 200px;
 }
+.card .card-body .btn{
+    width: 150px;
+    font-size: 1rem;
+}
 }
