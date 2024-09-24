@@ -44,7 +44,7 @@ export class FormularioComponent {
         console.error('Error al registrar suscripción:', error);
       }
     } else {
-      console.log('Formulario no enviado. Verifica los datos.');
+      console.log('Formulario no enviado. Verifica los datos o complete los restantes.');
     }
   }
 }
