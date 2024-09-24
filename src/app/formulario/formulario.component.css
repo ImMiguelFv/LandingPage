@@ -2,7 +2,6 @@
     background-color: var(--primarioV2);
     width: 60%;
     margin: 30px auto;
-    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
@@ -60,6 +59,9 @@
     width: auto;
     cursor: pointer;
     font-size: 1.2rem;
+    grid-column: span 2; /* Ocupa 2 columnas */
+    width: 200px;
+    margin: auto;
 
 }
 .card .card-body .btn:hover{
@@ -69,7 +71,7 @@
 @media screen and (max-width: 768px) {
 .card{
     width: 90%;
-    margin: 10px 10px;
+    margin: 10px auto;
 }
 .card .card-body .suscripción h1{
     font-size: 1.5rem;
