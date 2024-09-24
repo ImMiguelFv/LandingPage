@@ -7,7 +7,7 @@
 
 .testimonios .testimonios-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 300px);
     grid-template-rows: auto;
     grid-column-gap: 30px;
     margin: 30px;

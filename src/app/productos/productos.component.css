@@ -21,7 +21,8 @@
 }
 .content .productos-grid{
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 300px);
+    grid-row: repeat(1, 600px);
     grid-template-rows: auto;
     grid-column-gap: 50px;
 }

@@ -58,5 +58,10 @@ background-repeat: no-repeat; /* Opcional: Evita que la imagen se repita */
     .hero {
         padding-top: 120px;
     }
-    
+    .hero .container .hero-text {
+
+            padding: 10px;
+            font: 30px;   
+    }
+       
 }
