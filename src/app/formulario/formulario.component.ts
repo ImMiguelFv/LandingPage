@@ -21,7 +21,13 @@ export class FormularioComponent {
     locality: new FormControl('', Validators.required),
     province: new FormControl('', Validators.required),
   });
-
+  name = new  FormControl('', Validators.required);
+  email = new  FormControl('', [Validators.required, Validators.email]);
+  address = new  FormControl('', Validators.required);
+  postalcode = new  FormControl('', [Validators.required]);
+  locality = new  FormControl('', [Validators.required]);
+  province = new  FormControl('', [Validators.required]);
+  // Método para manejar el envío del formulario
   constructor(private supabaseService: SupabaseService) {}
 
   // Método para manejar el envío del formulario
