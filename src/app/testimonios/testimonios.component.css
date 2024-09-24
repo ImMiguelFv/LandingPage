@@ -24,9 +24,10 @@
 }
 @media screen and (max-width: 768px) {
     .testimonios .testimonios-container {
-        grid-template-columns: repeat(1, 400px);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: auto;
         grid-row-gap: 30px;
+        grid-column-gap: 10px;
         margin: 30px;
     }   
     
