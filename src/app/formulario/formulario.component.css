@@ -68,13 +68,11 @@
 
 @media screen and (max-width: 768px) {
 .card{
-    width: 500px;
 }
 .card .card-body .suscripción h1{
     font-size: 1.5rem;
 }
 .card .card-body .mb-1{
-    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
