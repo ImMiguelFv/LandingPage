@@ -14,16 +14,24 @@ export class SupabaseService {
     // Inicializa Supabase
     this.supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
   }
+
   // Método para insertar datos en la tabla "suscripciones"
   async registrarSuscripcion(datos: any) {
-    const { data, error } = await this.supabase
-      .from('suscripciones') // Nombre de la tabla
-      .insert([datos]);
+    try {
+      const { data, error } = await this.supabase
+        .from('suscripciones') // Nombre de la tabla
+        .insert([datos]);
 
-    if (error) {
-      console.error('Error al registrar suscripción:', error);
-      throw error;
+      if (error) {
+        console.error('Error al registrar suscripción:', error);
+        throw error;
+      }
+
+      console.log('Suscripción registrada exitosamente:', data);
+      return data; // Devuelve los datos insertados
+    } catch (error) {
+      console.error('Error en registrarSuscripcion:', error);
+      throw error; // Propaga el error para manejarlo en el componente
     }
-
   }
 }
