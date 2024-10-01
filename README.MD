@@ -30,9 +30,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 COLOR CSS 
-    --primario: #A3D9A5;
-    --primarioV2: #243024;
+    --primario: #82AD84 ;
+    --primarioV12: #cff0d1 ;
+    --primarioV21: #567557b7;
+    --primarioV2: #4d664eb7;
+    --primarioV3: #4d664eb7;
     --secundario: #F6F5F1;
-    --resaltado: #FFE194;
-    --fondo: #4F4F4F;
-    --texto: #FFFFFF;
+    --resaltado: rgb(255, 225, 148);
+    --fondo: #FFFFFF;
+    --texto: #000000;
