@@ -9,7 +9,7 @@ export class SupabaseService {
 
   constructor() {
     const SUPABASE_URL = 'https://khusecrskpxvxqotvlww.supabase.co';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtodXNlY3Jza3B4dnhxb3R2bHd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjcxNjYwOTksImV4cCI6MjA0Mjc0MjA5OX0.eN5E90YrhJUkrG5hjjEsp0_BwIH4rT8gBxhNdsypNQ4';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtodXNlY3Jza3B4dnhxb3R2bHd3Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNzE2NjA5OSwiZXhwIjoyMDQyNzQyMDk5fQ.8IFPlCmoB2iGwBFsCcwaygHiB9FjaITIfoPSqy_G1KE';
     
     // Inicializa Supabase
     this.supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
