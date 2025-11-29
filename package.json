@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ImMiguelFv/TryWebs/tree/main/LandingPage"
+    "url": "git+https://github.com/ImMiguelFv/TryWebs.git#main"
   },
   "keywords": [
     "LandingPage",
